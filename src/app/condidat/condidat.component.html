@@ -1,0 +1,53 @@
+<div class="container-fluid" >
+  <div class="row">
+     <div class="col-md-6 left" style="width: 15%;">      <app-sidebar></app-sidebar>
+     </div>
+     <div class="col-md-6 right" style="width: 80%;padding-left: 5%;padding-top: 5%;">
+      <div style="overflow-x:auto" >
+        <br>
+      <input type="text" placeholder="chercher par formation" style="width:450px;padding:2px 20px ;margin:10px 0px;height:30px"
+      [(ngModel)]="term">
+
+      <table class="table table-striped table-hover">
+          <thead>
+            <tr style="background-color: #0088BB;">
+            
+              <th scope="col" style="color: white;text-align: center;font-family: monospace;">Nom</th>
+              <th scope="col" style="color: white;text-align: center;font-family: monospace;">Prenom</th>
+              <th scope="col" style="color: white;text-align: center;font-family: monospace;">Lieu</th>
+              <th scope="col" style="color: white;text-align: center;font-family: monospace;">Numero de téléphone</th>
+              <th scope="col" style="color: white;text-align: center;font-family: monospace;">Email</th>
+              <th scope="col" style="color: white;text-align: center;font-family: monospace;">Product</th>
+              <th scope="col" style="color: white;text-align: center;font-family: monospace;">Contact</th>
+              <th scope="col" style="color: white;text-align: center;font-family: monospace;"></th>
+
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let c of condidats | filter:term">
+            
+              <td scope="col" style="color:rgb(81, 80, 80);text-align: center;font-family: monospace;">{{c.nom}}</td>
+              <td scope="col" style="color:rgb(81, 80, 80);text-align: center;font-family: monospace;">{{c.prenom}}</td>
+              <td scope="col" style="color:rgb(81, 80, 80);text-align: center;font-family: monospace;">{{c.lieu}}</td>
+              <td scope="col" style="color:rgb(81, 80, 80);text-align: center;font-family: monospace;">{{c.numt}}</td>
+              <td scope="col" style="color:rgb(81, 80, 80);text-align: center;font-family: monospace;">{{c.email}}</td>
+              <td scope="col" style="color:rgb(81, 80, 80);text-align: center;font-family: monospace;">{{c.quiz.title}}</td>
+              <td scope="col" >
+                <button type="button" class="btn btn-success" [routerLink]="'/contacter/'+ c.id"  >Contacter
+                </button>
+              </td>
+            
+
+            </tr>
+        
+          </tbody>
+        </table>
+     </div>
+  </div>
+ </div></div>
+            
+
+
+
+
+        

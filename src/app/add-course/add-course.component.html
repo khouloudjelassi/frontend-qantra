@@ -1,0 +1,189 @@
+<div class="container-fluid" >
+  <div class="row">
+     <div class="col-md-6 left" style="width: 15%;">      <app-sidebar></app-sidebar>
+     </div>
+     <div class="col-md-6 right" style="width: 80%;padding-left: 5%;padding-top: 5%;">
+
+<mat-card>
+  <h4>Add New Course</h4><br><br>
+  
+  <div class="container ">
+      <div class="row">
+          <div class="col-md-8 offset-md-2">
+            
+
+            
+              <form (ngSubmit)="addQuiz()">
+
+               
+                  <div class="input-group mb-3">
+                
+                    <input
+                    class="form-control"
+                    style="border-color: #0088BB;"
+                    required
+                     type="text"
+                      name="title"
+                       matInput placeholder="title"
+                       [(ngModel)]="quizData.title"
+                       class="form-control" aria-label="Text input with segmented dropdown button">
+                  </div>
+                  <br>
+                  <div class="input-group mb-3">
+                
+                    <input
+                    class="form-control"
+                    style="border-color: #0088BB;"
+                    required
+                     type="text"
+                      name="title"
+                       matInput placeholder="description"
+                       [(ngModel)]="quizData.description"
+                       class="form-control" aria-label="Text input with segmented dropdown button">
+                  </div>
+                  <br>
+               
+                      <div class="input-group mb-3">
+                
+                        <input
+                        class="form-control"
+                        style="border-color: #0088BB;"
+                        required
+                         type="text"
+                          name="title"
+                           matInput placeholder="periode"
+                           [(ngModel)]="quizData.period"
+                           class="form-control" aria-label="Text input with segmented dropdown button">
+                      </div>
+                      <br>
+                      <div class="input-group">
+                        <select class="custom-select" id="inputGroupSelect04"        
+                        required
+                        style="border-color: #0088BB;"
+                         type="text"
+      
+                          name="meettype"
+                           matInput 
+                           [(ngModel)]="quizData.meettype"> 
+                           <option value="">Choose Type of meet</option>
+                           <option >Online</option>
+                           <option >Onsite</option>
+                                                
+                        </select>
+                       
+                      </div>
+      <br>
+                     
+                      <div class="input-group">
+                        <select class="custom-select" id="inputGroupSelect04"        
+                        required
+                        style="border-color: #0088BB;"
+                         type="text"
+      
+                          name="title"
+                           matInput 
+                           [(ngModel)]="quizData.category.cid"> 
+                          <option *ngFor="let c of categories" [value]="c.cid"> {{c.title}}</option>
+                        
+                        </select>
+                       
+                      </div>
+     
+      <br>
+      <div class="input-group mb-3">
+    
+        <input
+        class="form-control"
+        style="border-color: #0088BB;"
+        required
+         type="number"
+          name="nombrechapitre"
+           matInput placeholder="chapitre number"
+           [(ngModel)]="quizData.nombrechapitre"
+           class="form-control" aria-label="Text input with segmented dropdown button">
+      </div>
+     
+      <br>
+      <div class="input-group mb-3">
+    
+        <input
+        class="form-control"
+        style="border-color: #0088BB;"
+        required
+         type="number"
+          name="nombreexercice"
+           matInput placeholder="exercices number"
+           [(ngModel)]="quizData.nombreexercice"
+           class="form-control" aria-label="Text input with segmented dropdown button">
+      </div>
+      
+      <br>
+      <div class="input-group mb-3">
+    
+        <input
+        class="form-control"
+        style="border-color: #0088BB;"
+        required
+         type="number"
+          name="nombreproject"
+           matInput placeholder="projects number"
+           [(ngModel)]="quizData.nombreproject"
+           class="form-control" aria-label="Text input with segmented dropdown button">
+      </div>
+      
+      <br>
+      <div class="input-group mb-3">
+    
+        <input
+        class="form-control"
+        style="border-color: #0088BB;"
+        required
+         type="number"
+          name="nombreworkshps"
+           matInput placeholder="workshops number"
+           [(ngModel)]="quizData.nombreworkshps"
+           class="form-control" aria-label="Text input with segmented dropdown button">
+      </div>
+      <br>
+      <div class="input-group mb-3">
+    
+        <input
+        class="form-control"
+        style="border-color: #0088BB;"
+        required
+         type="number"
+          name="nombrehore"
+           matInput placeholder="hours number"
+           [(ngModel)]="quizData.nombrehore"
+           class="form-control" aria-label="Text input with segmented dropdown button">
+      </div>
+
+      <br>
+     
+      <div class="input-group mb-3">
+    
+        <input
+        class="form-control"
+        style="border-color: #0088BB;"
+        required
+         type="number"
+          name="price"
+           matInput placeholder="price"
+           [(ngModel)]="quizData.price"
+           class="form-control" aria-label="Text input with segmented dropdown button">
+      </div>
+      <br>
+
+                        <div >
+                            <button style="background-color: #FAB555; width: 100%;height: 40%;" class="btn ">Add</button>
+                        </div>
+
+              </form>
+          </div>
+
+      </div>
+
+  </div>
+</mat-card>
+</div></div></div>
+

@@ -1,0 +1,34 @@
+
+
+
+.navbar-toggler-icon{
+    padding: 10px;
+}
+
+.menu{
+    padding: 10px;
+    
+}
+
+.menu-item{
+    cursor: pointer;
+    padding: 5px 0;
+}
+
+.menu-item:hover{
+    text-decoration: underline;
+
+}
+
+.fixed{
+    position: fixed;
+    width: 100%;
+    transition: 0.2s linear;
+    top:0px;
+}
+
+.nofixed{
+    position: static;
+    transition: 0.2s linear;
+    top:-50px;
+}

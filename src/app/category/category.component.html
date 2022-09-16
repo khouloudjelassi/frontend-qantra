@@ -1,0 +1,30 @@
+
+<div class="container-fluid" >
+    <div class="row">
+       <div class="col-md-6 left" style="width: 15%;">      <app-sidebar></app-sidebar>
+       </div>
+       <div class="col-md-6 right" style="width: 80%;padding-left: 5%;padding-top: 5%;">
+<mat-card>
+    <h2>All Categories</h2>
+    <mat-list>
+       
+        <mat-list-item *ngFor="let c of categories">
+            <mat-icon mat-list-icon>category</mat-icon>
+            <div mat-line>{{c.title}}</div>
+            <div mat-line>{{c.description}}</div>
+            <div class="form-row " >
+            <div class="form-row " style="padding-left:10px ;" >
+
+            <div class="form-row " >
+                <button type="button" class="btn btn-outline-success" [routerLink]="'/category/'+ c.cid" >Modifier</button>
+
+                <div class="form-row " style="padding-left: 10px;" >
+                    <button type="button" class="btn btn-outline-danger" (click)="deleteQuiz(c.cid)">Supprimer</button></div></div>
+
+                </div>
+            </div>
+
+<mat-divider></mat-divider>
+        </mat-list-item>
+    </mat-list>
+</mat-card></div></div></div>

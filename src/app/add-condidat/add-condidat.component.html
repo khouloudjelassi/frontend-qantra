@@ -1,0 +1,165 @@
+
+
+  <div class="card-body"> 
+    <form novalidate (ngSubmit)="formSubmit(registerForm)" #registerForm="ngForm"> 
+      <div class="form-row">
+        <div class="col-md-6 mb-3">
+          <label>Nom</label>
+          <input type="text" class="form-control" placeholder="Nom"
+           [(ngModel)]="condidat.nom" name="nom" required 
+           #nomVar="ngModel" 
+           [ngClass]="{'is-invalid':nomVar.touched && !nomVar.valid}"
+           maxlength="20"
+          minlength="3"
+           >
+
+          <div class="invalid-feedback">
+            <span *ngIf="nomVar.errors">Entrez Votre Nom (min 3 charactéres)</span>
+
+          </div>
+
+        </div>
+        <br>
+        <div class="col-md-6 mb-3">
+          <label>Prenom</label>
+          <input type="text" class="form-control" placeholder="Prenom"
+           [(ngModel)]="condidat.prenom" name="prenom"
+           required 
+           #prenomVar="ngModel" 
+           [ngClass]="{'is-invalid':prenomVar.touched && !prenomVar.valid}"
+           maxlength="20"
+          minlength="3"
+           >
+           <div class="invalid-feedback">
+            <span *ngIf="prenomVar.errors">Entrez Votre Prenom (min 3 charactéres)</span>
+
+          </div>
+        </div>
+      </div>
+      <br>
+
+      
+      <div class="form-row">
+      <div class="col-md-12 mb-3">
+        <label>E-mail</label>
+        <input type="email" 
+        class="form-control"
+         placeholder="E-mail" 
+        [(ngModel)]="condidat.email" 
+         name="email"
+           required
+           #emailVar="ngModel" 
+           [ngClass]="{'is-invalid':emailVar.touched && !emailVar.valid}"
+        >
+
+        <div class="invalid-feedback">
+          <span *ngIf="emailVar.errors?.['required']">Entrez Votre Email</span>
+          <span *ngIf="emailVar.errors?.['email']">Entrez Votre valid Email</span>
+
+        </div>
+        
+      </div>
+    </div>
+<br>
+    <div class="form-row">
+      <div class="col-md-12 mb-3">
+      <label>Numero de Téléphone</label>
+      <input type="text" class="form-control" placeholder="Numéro de téléphone"
+       [(ngModel)]="condidat.numt"
+       name="numt"
+       required 
+       #numtVar="ngModel" 
+       [ngClass]="{'is-invalid':numtVar.touched && !numtVar.valid}"
+       maxlength="8"
+       minlength="8"
+       
+       >
+       <div class="invalid-feedback">
+        <span *ngIf="numtVar.errors?.['required']">Entrez Votre Numéro de téléphone</span>
+        <span *ngIf="numtVar.errors?.['minlength']">8 chiffres</span>
+        <span *ngIf="numtVar.errors?.['maxlength']">8 chiffres</span>
+
+      </div>
+    </div>
+    </div>
+
+   
+    
+     <br>
+
+     <div class="form-row">
+      <div class="col-md-12 mb-3">
+
+     <label >Lieu</label>
+                      <div class="input-group">
+                          <select   class="form-control"   
+                          placeholder="choisissez un lieu"
+                          required
+                          type="text"
+                          name="lieu"
+                            required
+                            #lieuVar="ngModel"
+                         [(ngModel)]="condidat.lieu"
+                         [ngClass]="{'is-invalid':lieuVar.touched && !lieuVar.valid}"
+                         > 
+                            <option value="">choisissez un lieu</option>
+                            <option >Tunis</option>
+                            <option >Sousse</option>
+                            <option >Beja</option>
+                            <option >Nabeul</option>
+                          </select>
+                          <div class="invalid-feedback">
+                            <span *ngIf="lieuVar.errors?.['required']">Il faut choisir un lieu</span>
+                  
+                          </div>
+                         
+                        </div>
+
+                       <br>
+
+                       <div class="form-row">
+                        <div class="col-md-12 mb-3">
+                          <label>Product</label>
+                       
+                          
+                         
+                  
+                          <div class="input-group">
+                            <select   class="form-control"   
+                            placeholder="choisissez un product"
+                            required
+                            type="text"
+                            name="product"
+                              required
+                              #proVar="ngModel"
+                           [(ngModel)]="condidat.quiz.qId"
+                           [ngClass]="{'is-invalid':proVar.touched && !proVar.valid}"
+                           > 
+                           <option value="">choisissez un product</option>
+                  
+                              <option *ngFor="let c of quizDatas" [value]="c.qId">{{c.title}}</option>
+                            
+                            </select>
+                            <div class="invalid-feedback">
+                              <span *ngIf="proVar.errors?.['required']">Il faut choisir un product</span>
+                    
+                            </div>
+                          </div>
+                         
+                        </div>
+                       </div>
+
+                     
+              
+
+                        </div></div>
+
+                        <br><br><br>
+
+    <div class="text-right" >
+      <div  data-bs-toggle="tooltip" data-bs-placement="top" title="Remplissez tout les champs" style="width:100%;padding-left: 50%;">
+      <button  style="background-color: #FAB555;" class="btn " [disabled]="!registerForm.valid" >Soumettre</button>
+    </div>
+    </div>
+    </form>
+  </div>

@@ -1,0 +1,10 @@
+@keyframes an{
+    from {top: 0px; background-color: yellow;}
+    to {top: 200px; background-color: blue;}
+}
+
+div.center {
+    margin-left: auto;
+    margin-right: auto;
+     width: 80%;
+ display: block;}

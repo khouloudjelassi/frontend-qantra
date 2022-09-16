@@ -1,0 +1,194 @@
+
+<div class="container-fluid" >
+    <div class="row">
+       <div class="col-md-6 left" style="width: 15%;">      <app-sidebar></app-sidebar>
+        
+       </div>
+
+       <div class="container-fluid" >
+        <div class="row">
+           <div class="col-md-6 left" style="width: 15%;">      <app-sidebar></app-sidebar>
+           </div>
+           <div class="col-md-6 right" style="width: 80%;padding-left: 5%;padding-top: 5%;">
+      
+      <mat-card>
+        <h4>Add Course Content</h4><br><br>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 offset-md-2">
+                  
+      
+                  
+                    <form (ngSubmit)="add()">
+      
+       
+                            <br>
+                            <div class="input-group">
+                              <select class="custom-select" id="inputGroupSelect04"        
+                              required
+                              style="border-color: #0088BB;"
+                               type="text"
+            
+                                name="title"
+                                 matInput 
+                                 [(ngModel)]="objectif.quiz.qId"> 
+                                <option *ngFor="let c of quizData" [value]="c.qId"> {{c.title}}</option>
+                              
+                              </select>
+                             
+                            </div>
+                            <br>
+                            <div class="input-group mb-3">
+                          
+                                <input
+                                class="form-control"
+                                style="border-color: #0088BB;"
+                                required
+                                 type="text"
+                                  name="ob1"
+                                   matInput placeholder="title 1"
+                                   [(ngModel)]="objectif.ob1"
+                                                    class="form-control" aria-label="Text input with segmented dropdown button">
+                              </div>
+                              <br>
+                              <div class="input-group mb-3">
+                            
+                                  <input
+                                  class="form-control"
+                                  style="border-color: #0088BB;"
+                                  required
+                                   type="text"
+                                    name="ob2"
+                                     matInput placeholder="description 1"
+                                     [(ngModel)]="objectif.ob2"
+                                                      class="form-control" aria-label="Text input with segmented dropdown button">
+                                </div>
+                                <br>
+                                <div class="input-group mb-3">
+                              
+                                    <input
+                                    class="form-control"
+                                    style="border-color: #0088BB;"
+                                    required
+                                     type="text"
+                                      name="ob3"
+                                       matInput placeholder="title 2"
+                                       [(ngModel)]="objectif.ob3"
+                                                        class="form-control" aria-label="Text input with segmented dropdown button">
+                                  </div>
+                                                                    
+           
+            <br>
+            <div class="input-group mb-3">
+          
+                <input
+                class="form-control"
+                style="border-color: #0088BB;"
+                required
+                 type="text"
+                  name="ob4"
+                   matInput placeholder="description 2"
+                   [(ngModel)]="objectif.ob4"
+                                    class="form-control" aria-label="Text input with segmented dropdown button">
+              </div>
+              
+              <br>
+            <div class="input-group mb-3">
+          
+              <input
+              class="form-control"
+              style="border-color: #0088BB;"
+              required
+               type="text"
+                name="ob5"
+                 matInput placeholder="title 3"
+                 [(ngModel)]="objectif.ob5"
+                                  class="form-control" aria-label="Text input with segmented dropdown button">
+            </div>
+            
+            <br>
+            <div class="input-group mb-3">
+          
+                <input
+                class="form-control"
+                style="border-color: #0088BB;"
+                required
+                 type="text"
+                  name="ob6"
+                   matInput placeholder="description 3 "
+                   [(ngModel)]="objectif.ob6"
+                                    class="form-control" aria-label="Text input with segmented dropdown button">
+              </div>
+              
+              <br>
+              <div class="input-group mb-3">
+          
+                <input
+                class="form-control"
+                style="border-color: #0088BB;"
+                required
+                 type="text"
+                  name="ob7"
+                   matInput placeholder="title 4"
+                   [(ngModel)]="objectif.ob7"
+                                    class="form-control" aria-label="Text input with segmented dropdown button">
+              </div>
+              
+              <br>
+            <div class="input-group mb-3">
+          
+              <input
+              class="form-control"
+              style="border-color: #0088BB;"
+              required
+               type="text"
+                name="ob8"
+                 matInput placeholder="description 4"
+                 [(ngModel)]="objectif.ob8"
+                                  class="form-control" aria-label="Text input with segmented dropdown button">
+            </div>
+            
+            <br>
+            <div class="input-group mb-3">
+          
+              <input
+              class="form-control"
+              style="border-color: #0088BB;"
+              required
+               type="text"
+                name="ob9"
+                 matInput placeholder="title 5"
+                 [(ngModel)]="objectif.ob9"
+                 class="form-control" aria-label="Text input with segmented dropdown button">
+            </div>
+            <br>
+            <div class="input-group mb-3">
+          
+              <input
+              class="form-control"
+              style="border-color: #0088BB;"
+              required
+               type="text"
+                name="ob10"
+                 matInput placeholder="description 5"
+                 [(ngModel)]="objectif.ob10"
+                 class="form-control" aria-label="Text input with segmented dropdown button">
+            </div>
+            <br><br>
+                              <div >
+                                  <button style="background-color: #FAB555; width: 100%;height: 40%;" class="btn ">Add</button>
+                              </div>
+      
+                    </form>
+                </div>
+      
+            </div>
+        </div>
+      </mat-card>
+      </div></div></div>
+      
+      
+
+       </div>
+
+      

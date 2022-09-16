@@ -1,0 +1,415 @@
+<div id="template-mo-jassa-hero-carousel" class="carousel slide" data-bs-ride="carousel">
+
+  <div class="carousel-inner" style="background-color:#F3EBEF;">
+
+    <app-navbar></app-navbar>
+    <br>
+    <br><br>
+
+
+    <div class="carousel-item active">
+      <div class="container">
+        <div class="row p-5">
+          <div class="mx-auto col-md-4 col-lg-4 order-lg-last ">
+            <br><br>
+            <br><br><br><br>
+            <img class="img-fluid " src="../../assets/web.PNG" alt="" style="border-radius: 10%;">
+          </div>
+          <div class="col-lg-6 mb-0 d-flex align-items-center ">
+            <div class="text-align-left align-self-center" style="color: black;">
+
+              <h3>{{quizzes.title}}</h3>
+              <br>
+              <h5>{{quizzes.description}}
+              </h5>
+              <br><br>
+
+              <div class="form-row">
+                <p style="border-color:white ;border-style: groove;">{{quizzes.nombrechapitre}} Chaptres</p>&nbsp;&nbsp;
+                <p style="border-color:white ;border-style: groove;">{{quizzes.nombreexercice}} Exercices&nbsp;</p>
+                &nbsp;&nbsp;
+                <p style="border-color:white ;border-style: groove;">{{quizzes.nombreproject}} Projects&nbsp;</p>
+                &nbsp;&nbsp;
+                <p style="border-color:white ;border-style: groove;">{{quizzes.nombreworkshps}} {{quizzes.meettype}}
+                  meetings&nbsp;</p>&nbsp;&nbsp;
+                <p style="border-color:white ;border-style: groove;">{{quizzes.nombreworkshps}} Workshops</p>
+              </div>
+
+              <div class="form-row">
+                <div>
+                  <p style="font-family: monospace;font-size: 12px;">
+                    <mat-icon style="font-size: 20px;">calendar_today</mat-icon>Duration: {{quizzes.period}} weeks
+                  </p>
+                  <p style="font-family: monospace;font-size: 12px;">
+                    <mat-icon style="font-size: 20px;">laptop_chromebook</mat-icon>Learn on our platform 24/7
+                  </p>
+                  <p style="font-family: monospace;font-size: 12px;">
+                    <mat-icon style="font-size: 20px;">wb_sunny</mat-icon>Available in our hackerspaces during the
+                    evening
+                  </p>
+                  <br>
+                </div>
+                <div>
+                  <p style="font-family: monospace;font-size: 12px;">
+                    <mat-icon style="font-size: 20px;">access_time</mat-icon>{{quizzes.nombrehore}} hours / week
+                    attendance
+
+                </div>
+              </div>
+
+              <div class="form-row">
+                <button type="submit" class="btn  btn-lg ms-2" style="background-color: #FAB555;color: black;;"
+                  (click)="toAdd()" routerLinkActive="active">Register Now</button>
+                <h5 style="padding-left: 20px;" (click)="openDialog()">
+                  <mat-icon>cloud_download</mat-icon> Download the syllabus
+                </h5>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<br><br>
+<div class="center">
+<app-content></app-content>
+</div>
+<br>
+<section class="container py-5 align-items-center">
+
+
+
+  <div class="center">
+
+
+    <div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="h-200 " style="background-color: #FAB555;">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col">
+        <div class="card card-registration my-4">
+          <div class="row g-0">
+            <div class="col-xl-6 d-none d-xl-block" style="padding-left: 10%;">
+              <br><br><br><br><br><br>
+              <br><br><br><br><br><br>
+              <h3>Sign up now</h3>
+              <h4>And became {{quizzes.title}} Developer</h4>
+            </div>
+            <div class="col-xl-6">
+              <div class="card-body p-md-5 text-black">
+
+                <h4 class="mb-5 text-uppercase" id="add">Registration form</h4>
+                <div role="alert">
+
+                </div>
+
+                <div class="card-body">
+                  <form novalidate (ngSubmit)="formSubmit(registerForm)" #registerForm="ngForm">
+                    <div class="form-row">
+                      <div class="col-md-6 mb-3">
+                        <label>Nom</label>
+                        <input type="text" class="form-control" placeholder="Nom" [(ngModel)]="condidat.nom" name="nom"
+                          required #nomVar="ngModel" [ngClass]="{'is-invalid':nomVar.touched && !nomVar.valid}"
+                          maxlength="20" minlength="3">
+
+                        <div class="invalid-feedback">
+                          <span *ngIf="nomVar.errors">Entrez Votre Nom (min 3 charactéres)</span>
+
+                        </div>
+
+                      </div>
+                      <br>
+                      <div class="col-md-6 mb-3">
+                        <label>Prenom</label>
+                        <input type="text" class="form-control" placeholder="Prenom" [(ngModel)]="condidat.prenom"
+                          name="prenom" required #prenomVar="ngModel"
+                          [ngClass]="{'is-invalid':prenomVar.touched && !prenomVar.valid}" maxlength="20" minlength="3">
+                        <div class="invalid-feedback">
+                          <span *ngIf="prenomVar.errors">Entrez Votre Prenom (min 3 charactéres)</span>
+
+                        </div>
+                      </div>
+                    </div>
+                    <br>
+
+
+                    <div class="form-row">
+                      <div class="col-md-12 mb-3">
+                        <label>E-mail</label>
+                        <input type="email" class="form-control" placeholder="E-mail" [(ngModel)]="condidat.email"
+                          name="email" required #emailVar="ngModel"
+                          [ngClass]="{'is-invalid':emailVar.touched && !emailVar.valid}">
+
+                        <div class="invalid-feedback">
+                          <span *ngIf="emailVar.errors?.['required']">Entrez Votre Email</span>
+                          <span *ngIf="emailVar.errors?.['email']">Entrez Votre valid Email</span>
+
+                        </div>
+
+                      </div>
+                    </div>
+                    <br>
+                    <div class="form-row">
+                      <div class="col-md-12 mb-3">
+                        <label>Numero de Téléphone</label>
+                        <input type="text" class="form-control" placeholder="Numéro de téléphone"
+                          [(ngModel)]="condidat.numt" name="numt" required #numtVar="ngModel"
+                          [ngClass]="{'is-invalid':numtVar.touched && !numtVar.valid}" maxlength="8" minlength="8">
+                        <div class="invalid-feedback">
+                          <span *ngIf="numtVar.errors?.['required']">Entrez Votre Numéro de téléphone</span>
+                          <span *ngIf="numtVar.errors?.['minlength']">8 chiffres</span>
+                          <span *ngIf="numtVar.errors?.['maxlength']">8 chiffres</span>
+
+                        </div>
+                      </div>
+                    </div>
+
+                    <br>
+
+
+
+                    <div class="form-row">
+                      <div class="col-md-12 mb-3">
+
+                        <label>Lieu</label>
+                        <div class="input-group">
+                          <select class="form-control" placeholder="choisissez un lieu" required type="text" name="lieu"
+                            required #lieuVar="ngModel" [(ngModel)]="condidat.lieu"
+                            [ngClass]="{'is-invalid':lieuVar.touched && !lieuVar.valid}">
+                            <option value="">choisissez un lieu</option>
+                            <option>Tunis</option>
+                            <option>Sousse</option>
+                            <option>Beja</option>
+                            <option>Nabeul</option>
+                          </select>
+                          <div class="invalid-feedback">
+                            <span *ngIf="lieuVar.errors?.['required']">Il faut choisir un lieu</span>
+
+                          </div>
+
+                        </div>
+
+                        <br>
+
+                        <div class="form-row">
+                          <div class="col-md-12 mb-3">
+                            <label>Product</label>
+
+
+
+
+                            <div class="input-group">
+                              <select class="form-control" placeholder="choisissez un product" required type="text"
+                                name="product" required #proVar="ngModel" [(ngModel)]="condidat.quiz.qId"
+                                [ngClass]="{'is-invalid':proVar.touched && !proVar.valid}">
+                                <option value="">choisissez un product</option>
+
+                                <option>{{quizzes.title}} </option>
+
+                              </select>
+                              <div class="invalid-feedback">
+                                <span *ngIf="proVar.errors?.['required']">Il faut choisir un product</span>
+
+                              </div>
+                            </div>
+
+                          </div>
+                        </div>
+
+
+
+
+                      </div>
+                    </div>
+
+                    <br><br><br>
+
+                    <div class="text-right">
+                      <div data-bs-toggle="tooltip" data-bs-placement="top" title="Remplissez tout les champs"
+                        style="width:100%;padding-left: 50%;">
+                        <button style="background-color: #FAB555;" class="btn "
+                          [disabled]="!registerForm.valid">Soumettre</button>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="h-200 " style="background-color: #AF2F64;">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col">
+        <div class="card card-registration my-4">
+          <div class="row g-0">
+            <div class="col-xl-6 d-xl-block">
+              <div class="card-body">
+                <div>
+                  <br><br><br><br><br>
+                  <h4 class="mb-5 text-uppercase" id="add">WHO CAN JOIN US ?</h4>
+
+                  <h5>
+                    <mat-icon>done_all</mat-icon> People aged 14 or older
+                  </h5>
+                  <h5>
+                    <mat-icon>done_all</mat-icon> People who are passionate about {{quizzes.title}}
+                  </h5>
+                  <h5>
+                    <mat-icon>done_all</mat-icon> People who want to learn more about {{quizzes.title}}.
+                  </h5>
+
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-6">
+              <div class="card-body p-md-5 text-black">
+
+                <div role="alert">
+
+                </div>
+
+
+
+                <img src="../../assets/girl2.PNG" alt="Sample photo" class="img-fluid"
+                  style="border-top-left-radius: .25rem; border-bottom-left-radius: .25rem;" />
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<app-objectif></app-objectif>
+
+<section class="h-200 ">
+
+  <div class="container py-5 h-100" style="padding-left: 30%;">
+    <h4 s>Prices and funding</h4>
+    <h5 style="text-decoration: underline;">
+      <mat-icon>arrow_right_alt</mat-icon> Pay and join us!
+    </h5>
+    <h4>{{quizzes.price}}</h4>
+    <h5 style="text-decoration: underline;">According to our payment methods</h5>
+    <br>
+    <h5>No other payment will be requested either during </h5>
+    <h5>or after the course.</h5>
+  </div>
+</section>
+<div class="container">
+  <div id="content" class="offerList">
+    <div class="row clearfix">
+
+      <div class="col-xs-12 col-md-9 column pull-right">
+        <!-- Block B -->
+        ...
+
+      </div>
+
+      <div id="contactBlock" class="col-xs-12 col-md-3 column pull-left">
+        <mat-card style="background-color: #FAB555;">
+          <p>Need advice ?
+            Contact our admissions team for help<button style="background-color: #FAB555;">Contact Us</button>
+
+          </p>
+
+        </mat-card>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<section class="h-200 " style="background-color: #F3EBEF;">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col">
+        <div class="">
+          <div class="row g-0" style="padding-left: 20%;">
+            <h4>Payment options</h4>
+            <br>
+            <br>
+            <br>
+            <br>
+            <div>
+              <mat-icon>transform</mat-icon> <span>&nbsp;&nbsp;Wire Transfer</span>
+              <h6> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Call us and receive all the information you need to make the payment
+                from your bank.</h6>
+            </div>
+            <br>
+            <br>
+
+            <br>
+            <br>
+            <div>
+              <mat-icon>transform</mat-icon> <span>&nbsp;&nbsp;In one of our hackerspaces</span>
+              <h6> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Make an appointment with one of our educational consultants and pay in
+                one of our hackerspaces.</h6>
+            </div>
+            <br>
+            <br>
+
+            <br>
+            <br>
+            <div>
+              <mat-icon>transform</mat-icon> <span>&nbsp;&nbsp;By minute mandate</span>
+              <h6> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Call us and receive all the information to pay from the post office
+                nearest to you.</h6>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="container py-5 align-items-center" >
+
+  <h4 class="text-center" >Get Ready for the jobs of the future  </h4>
+  <p>42% of job vacancies are influenced by digitization and there are 400,000 new jobs in the digital industry! 
+    Qantra's vision is to train the talents of tomorrow, those who will be able to face, 
+    and even benefit from digitalization. This path will allow you to become a web developer,
+     have a rich portfolio and acquire the necessary skills to land you a job.
+
+  </p>
+  <div  class="center">
+ 
+     
+    
+    <div  >
+      <app-play-video></app-play-video>
+
+    </div>
+
+</div>
+
+</section>
+
+<br><br>
+
+<br>
+<br>
+
+<app-footer></app-footer>

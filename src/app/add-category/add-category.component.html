@@ -1,0 +1,53 @@
+
+
+<div class="container-fluid" >
+    <div class="row">
+       <div class="col-md-6 left" style="width: 15%;">      <app-sidebar></app-sidebar>
+        
+       </div>
+       
+       <div class="col-md-6 right" style="width: 80%;padding-top: 5%;">       <div class="bootstrap-wrapper">
+          <div class="row">
+           <div class="col-md-8 offset-md-2" >
+            <mat-card style="width: 120%;">
+              <h2>Add Category</h2>
+            <form  >
+                  
+              <div class="input-group mb-3">
+             
+                  <input 
+                  [(ngModel)]="category.title"
+                  style="border-color: #0088BB;"   
+                  class="form-control"
+                  required
+                  type="text"
+                   name="title"
+                  matInput placeholder="Titre"
+                  aria-label="Text input with segmented dropdown button">
+                </div>
+          <br>
+         
+          
+          <div class="input-group mb-3">
+             
+              <textarea    [(ngModel)]="category.description"  style="border-color: #0088BB;" class="form-control"
+                   required
+                    type="text"
+                     name="title"
+                      matInput placeholder="description"
+            
+                  ></textarea>
+            </div>
+
+         
+                <br>
+                <br>
+                <button (click)="formSubmit()"  style="background-color: #FAB555; width: 100%;height: 40%;" class="btn ">Ajouter</button>
+
+            </form>
+          </mat-card>
+           </div>
+          </div>
+      </div></div></div></div>
+  
+  

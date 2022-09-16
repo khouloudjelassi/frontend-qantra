@@ -1,0 +1,78 @@
+<div class="container-fluid" >
+    <div class="row">
+       <div class="col-md-6 left" style="width: 15%;">      <app-sidebar></app-sidebar>
+       </div>
+       <div class="col-md-6 right" style="width: 80%;padding-left: 5%;padding-top: 5%;">
+  
+  
+
+<div class="container-fluid" >
+   
+  
+  <mat-card>
+    <h4>Send Email To  <h4 style="color:#0088BB ;">{{condidats.email}}</h4></h4><br><br>
+  
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+
+                <form *ngIf="condidats" (submit)="formSubmit()">
+                 
+                    <div class="input-group mb-3">
+                  
+                      <input
+                      class="form-control"
+                      style="border-color: #0088BB;"
+                      required
+                      [(ngModel)]="mail.receiver"
+                       type="email"
+                        name="Email"
+                         matInput 
+                         placeholder="{{condidats.email}}"
+                         class="form-control" aria-label="Text input with segmented dropdown button" >
+                                            </div>
+
+                    <br>
+                    <div class="input-group mb-3">
+                  
+                      <input
+                      [(ngModel)]="mail.object"
+
+                      class="form-control"
+                      style="border-color: #0088BB;"
+                      required
+                       type="text"
+                        name="Object"
+                         matInput placeholder="object"
+                         class="form-control" aria-label="Text input with segmented dropdown button">
+                    </div>
+                    <br>
+                        <div class="input-group mb-3">
+                  
+                          <textarea
+                          [(ngModel)]="mail.content"
+
+                          class="form-control"
+                          style="border-color: #0088BB;"
+                          required
+                           type="text"
+                            name="text"
+                             matInput placeholder="content"
+                             class="form-control" aria-label="Text input with segmented dropdown button"></textarea>
+                        </div>
+                        <br>
+                        
+        <br><br>
+  
+                          <div >
+                              <button (click)="formSubmit()"  style="background-color: #FAB555; width: 100%;height: 40%;" class="btn ">Send</button>
+                          </div>
+  
+                </form>
+            </div>
+  
+        </div>
+  
+    </div>
+  </mat-card>
+  </div></div>

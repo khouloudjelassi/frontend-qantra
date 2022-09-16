@@ -1,0 +1,40 @@
+<section class="h-200 " style="background-color: #AF2F64;">
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col">
+          <div class="card card-registration my-4">
+            <div class="row g-0">
+              <div class="col-xl-6 d-xl-block">
+                <img
+                  src="../../assets/girl.PNG"
+                  alt="Sample photo"
+                  class="img-fluid"
+                  style="border-top-left-radius: .25rem; border-bottom-left-radius: .25rem;"
+                />
+              </div>
+              <div class="col-xl-6">
+                <div class="card-body p-md-5 text-black" >
+                 
+                  <h4 class="mb-5 text-uppercase" id="add">The objectives of this program</h4>
+                  <div  role="alert">
+                   
+                  </div>
+      
+                  <div class="card-body" *ngFor="let c of objectif"> 
+                    <div >
+                      <h5>	<mat-icon>done_all</mat-icon>{{c.ob1}}</h5>
+                      <h5>	<mat-icon>done_all</mat-icon>{{c.ob2}}</h5>
+                      <h5>	<mat-icon>done_all</mat-icon>{{c.ob3}}</h5>
+                      <h5>	<mat-icon>done_all</mat-icon>{{c.ob4}}</h5>
+                      <h5>	<mat-icon>done_all</mat-icon>{{c.ob5}}</h5>
+             </div>
+                  </div>
+                
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>

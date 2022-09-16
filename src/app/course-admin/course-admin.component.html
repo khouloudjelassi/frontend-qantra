@@ -1,0 +1,38 @@
+
+<div class="container-fluid" >
+    <div class="row">
+       <div class="col-md-6 left" style="width: 15%;">      <app-sidebar></app-sidebar>
+       </div>
+       <div class="col-md-6 right" style="width: 80%;padding-left: 5%;padding-top: 5%;">
+
+<div class="form-row "> 
+        <div class="col-12 col-md-4 mb-4 " *ngFor="let c of quizzes" >
+            <div class="card h-100"  style="border-color: black ;">
+              
+               
+                <div class="card-body" >
+                    
+                    <div>
+                    <p class="card-text" >
+                    {{c.title}}
+                    </p>
+                    <p class="text-muted">{{c.description}}</p>
+                    <p class="text-muted">{{c.period}}</p>
+                    <p class="text-muted">{{c.category.title}}</p>
+                </div>
+                <div class="form-row " >
+                    <button type="button" class="btn btn-outline-success" [routerLink]="'/cours/'+ c.qId">Modifier</button>
+
+                    <div class="form-row " style="padding-left: 10px;" >
+                        <button type="button"  class="btn btn-outline-danger" (click)="deleteQuiz(c.qId)">Supprimer</button>
+    
+                    </div>
+                </div>
+            
+
+                </div>
+            </div>
+        
+        </div>
+    </div>
+    </div>

@@ -1,0 +1,31 @@
+<br>
+<div class="container-fluid" >
+<div style="padding-left: 10%;padding-right: 10%;"  > 
+ 
+ 
+
+  <hr>
+  <div >
+
+
+
+  <div  *ngFor="let c of categories"  >
+    <div>
+    <h4 class="card-text" >
+      <mat-icon>storage</mat-icon>&nbsp;&nbsp; 
+      
+      <b style="text-decoration: underline;font-family: monospace;" (click)="onClick()" >{{c.title}}</b>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;      <p>{{c.description}}</p>
+
+      <hr>
+      <div *ngIf="show">
+        <app-listecourseofcategory [cid]="c.cid" ></app-listecourseofcategory>
+      </div>
+
+    </h4>
+    <br>
+<div >
+  
+  
+</div>
+

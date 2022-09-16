@@ -1,0 +1,13 @@
+
+<div >
+
+<div class="center" *ngFor="let c of quizzes">
+    <div >
+  
+        <h5 style="padding-left: 5%; "><mat-icon >check_circle_outline</mat-icon>&nbsp;&nbsp;&nbsp;
+            <a style="text-decoration: underline;font-family: monospace;color: black;"  [routerLink]="'/course/'+ c.qId" >{{c.title}}</a></h5>
+        <hr>
+      </div>
+</div>
+
+</div>
